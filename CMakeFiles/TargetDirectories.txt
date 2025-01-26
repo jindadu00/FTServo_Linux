@@ -1,0 +1,3 @@
+/home/jinda/Desktop/FTServo_Linux-main/CMakeFiles/SCServo.dir
+/home/jinda/Desktop/FTServo_Linux-main/CMakeFiles/edit_cache.dir
+/home/jinda/Desktop/FTServo_Linux-main/CMakeFiles/rebuild_cache.dir
