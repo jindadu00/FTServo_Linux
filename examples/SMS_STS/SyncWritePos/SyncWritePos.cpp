@@ -7,10 +7,10 @@
 
 SMS_STS sm_st;
 
-u8 ID[2] = {1, 2};
-s16 Position[2];
-u16 Speed[2] = {2400, 2400};
-u8 ACC[2] = {50, 50};
+u8 ID[3] = {1, 2, 3};
+s16 Position[3];
+u16 Speed[3] = {2400, 2400, 2400};
+u8 ACC[3] = {50, 50, 50};
 
 int main(int argc, char **argv)
 {
@@ -19,19 +19,21 @@ int main(int argc, char **argv)
         return 0;
 	}
 	std::cout<<"serial:"<<argv[1]<<std::endl;
-    if(!sm_st.begin(115200, argv[1])){
+    if(!sm_st.begin(1000000, argv[1])){
         std::cout<<"Failed to init sms/sts motor!"<<std::endl;
         return 0;
     }
 	while(1){
-		Position[0] = 4095;
-		Position[1] = 4095;
+		Position[0] = 1024;
+		Position[1] = 2048;
+		Position[2] = 4095;
 		sm_st.SyncWritePosEx(ID, sizeof(ID), Position, Speed, ACC);//舵机(ID1/ID2)以最高速度V=2400(步/秒)，加速度A=50(50*100步/秒^2)，运行至P1=4095位置
-		std::cout<<"pos = "<<4095<<std::endl;
+		std::cout<<"pos = "<<"1024/2048/4095"<<std::endl;
 		usleep(2187*1000);//[(P1-P0)/V]*1000+[V/(A*100)]*1000
   
 		Position[0] = 0;
 		Position[1] = 0;
+		Position[2] = 0;
 		sm_st.SyncWritePosEx(ID, sizeof(ID), Position, Speed, ACC);//舵机(ID1/ID2)以最高速度V=2400(步/秒)，加速度A=50(50*100步/秒^2)，运行至P0=0位置
 		std::cout<<"pos = "<<0<<std::endl;
 		usleep(2187*1000);//[(P1-P0)/V]*1000+[V/(A*100)]*1000

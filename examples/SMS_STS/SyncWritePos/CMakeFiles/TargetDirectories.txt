@@ -1,0 +1,3 @@
+/home/jinda/Desktop/FTServo_Linux/examples/SMS_STS/SyncWritePos/CMakeFiles/SyncWritePos.dir
+/home/jinda/Desktop/FTServo_Linux/examples/SMS_STS/SyncWritePos/CMakeFiles/edit_cache.dir
+/home/jinda/Desktop/FTServo_Linux/examples/SMS_STS/SyncWritePos/CMakeFiles/rebuild_cache.dir

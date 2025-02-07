@@ -6,7 +6,7 @@
 #include "SCServo.h"
 
 SMS_STS sm_st;
-uint8_t ID[] = {1, 2};
+uint8_t ID[] = {1, 2, 3};
 uint8_t rxPacket[4];
 int16_t Position;
 int16_t Speed;
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
         return 0;
 	}
 	std::cout<<"serial:"<<argv[1]<<std::endl;
-    if(!sm_st.begin(115200, argv[1])){
+    if(!sm_st.begin(1000000, argv[1])){
         std::cout<<"Failed to init sms/sts motor!"<<std::endl;
         return 0;
     }
